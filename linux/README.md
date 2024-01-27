@@ -1,1 +1,5 @@
-# devops_airtel
+## linux basic 
+
+### Info about LInux as kernel 
+
+<img src="kernel.png">
