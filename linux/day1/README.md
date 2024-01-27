@@ -186,8 +186,15 @@ alias apr='cal  4 2024'
 [airtel@gaea-test ~]$ 
 
 
-
-
-
 ```
+
+## Task 1 
+
+<img src="task1.png">
+
+### task 2 
+
+<img src="task2.png">
+
+
 
