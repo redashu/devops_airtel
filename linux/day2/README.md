@@ -67,3 +67,38 @@
 
 </p>
 </details>
+
+### password locking 
+
+```
+[root@gaea-test ~]# useradd  x1
+[root@gaea-test ~]# 
+[root@gaea-test ~]# 
+[root@gaea-test ~]# passwd x1
+Changing password for user x1.
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@gaea-test ~]# 
+[root@gaea-test ~]# 
+[root@gaea-test ~]# passwd -l x1
+Locking password for user x1.
+passwd: Success
+[root@gaea-test ~]# passwd -d x1
+Removing password for user x1.
+passwd: Success
+[root@gaea-test ~]# passwd --help
+Usage: passwd [OPTION...] <accountName>
+  -k, --keep-tokens       keep non-expired authentication tokens
+  -d, --delete            delete the password for the named account (root only)
+  -l, --lock              lock the password for the named account (root only)
+  -u, --unlock            unlock the password for the named account (root only)
+  -e, --expire            expire the password for the named account (root only)
+  -f, --force             force operation
+  -x, --maximum=DAYS      maximum password lifetime (root only)
+  -n, --minimum=DAYS      minimum password lifetime (root only)
+  -w, --warning=DAYS      number of days warning users receives before password expiration (root
+                          only)
+
+```
