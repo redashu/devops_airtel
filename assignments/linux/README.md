@@ -38,3 +38,18 @@ Remove all the text files created in step 3.
 
 </details>
 
+## General sysAdmin tasks 
+
+### system info 
+
+<details>
+  <summary>View</summary>
+  ### Assignment: System Information Script
+
+  **Objective:** Write a shell script that retrieves and displays essential system information.
+
+  **Requirements:**
+  - Display the current date and time.
+  - List the currently logged-in users.
+- Show the system uptime.
+</details>
