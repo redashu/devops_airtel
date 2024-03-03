@@ -64,3 +64,18 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 
 
 ```
+
+### NEtworking distribution 
+
+<img src="net2.png">
+
+### More understanding of netowrk 
+
+<img src="net3.png">
+
+### Understanding NAT 
+
+<img src="nat.png">
+
+
+
