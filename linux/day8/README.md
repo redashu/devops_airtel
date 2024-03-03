@@ -23,3 +23,44 @@ ns33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 <img src="ieee.png">
 
 
+### number of IP address is decided by netmask 
+
+<img src="net1.png">
+
+### giving ip address to specific NIC card 
+
+```
+[root@gaea-test ~]# ifconfig  lo 
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 32  bytes 2368 (2.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 32  bytes 2368 (2.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@gaea-test ~]# ifconfig  lo  200.91.0.4 
+[root@gaea-test ~]# ifconfig  lo 
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 200.91.0.4  netmask 255.255.255.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 32  bytes 2368 (2.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 32  bytes 2368 (2.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@gaea-test ~]# ifconfig  lo  200.91.0.4  netmask 255.255.0.0
+[root@gaea-test ~]# ifconfig  lo  
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 200.91.0.4  netmask 255.255.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 32  bytes 2368 (2.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 32  bytes 2368 (2.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+```
