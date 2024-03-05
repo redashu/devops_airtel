@@ -110,4 +110,33 @@ and check to make sure that only the key(s) you wanted were added.
 
 ```
 
+### sending file and folder from ssh client to server
 
+```
+Desktop scp auth.png  test@52.87.167.216:     
+test@52.87.167.216's password: 
+auth.png                                                                                                               100% 1059KB 480.6KB/s   00:02    
+➜  Desktop
+
+===>>
+➜  Desktop scp -r  prom-data  test@52.87.167.216:
+test@52.87.167.216's password: 
+docker-compose.yaml                                                                                                    100%  260     1.0KB/s   00:00    
+docker-compose.yaml                                                                                                    100%  386     1.5KB/s   00:00    
+azure-pipeline.yaml                                                                                                    100%  438     1.7KB/s   00:00    
+go.mod                                                                                                                 100% 3669    13.8KB/s   00:00    
+go.mod                                                                                                                 100%  969     3.7KB/s   00:00    
+tools.go                           
+```
+
+### tip if on client side keyname is not id_rsa then 
+
+```
+[root@gaea-test .ssh]# ls
+ashu.pem  id_rsa.pub  known_hosts
+[root@gaea-test .ssh]# ssh -i ashu.pem test@52.87.167.216 
+Last login: Tue Mar  5 04:17:58 2024 from 27.58.26.246
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+
+```
