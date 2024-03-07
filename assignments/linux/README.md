@@ -60,4 +60,8 @@ Remove all the text files created in step 3.
 
 
 
+### web task -- httpd related
+
+<img src="httpd1.png">
+
 
