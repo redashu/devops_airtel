@@ -130,3 +130,9 @@ Server:
 
 ```
 
+### using docker or rancher desktop we can enable linux container in windows 10/11 or macbook 
+
+<img src="macwin.png">
+
+
+
