@@ -10,3 +10,8 @@
   <li> WIndows 10 or later   </li>
   
 </ol>
+
+### Docker code test with multiple images
+
+<img src="task1.png">
+
