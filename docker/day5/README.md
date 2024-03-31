@@ -270,3 +270,29 @@ Hello airtel
 Hello docker , we are in progress 
 _________________
 ```
+
+### we can use nonroot user to run container code in general 
+
+```
+FROM alpine 
+# pulling python image from docker hub 
+LABEL name="ashutoshh"
+LABEL email="ashutoshh@linux.com"
+# image creator info -- optional 
+RUN apk add python3 
+RUN mkdir  /opt/pycodes/ 
+# to run any command whatever required we use RUN 
+COPY *.py  /opt/pycodes/ 
+# from docker server copy code to new image while building 
+#CMD ["python3","/opt/pycodes/hello.py"]
+# to set default process while creating container 
+# it can be replaced by docker engineer  while creating container 
+WORKDIR /opt/pycodes/ 
+USER 1001 
+# gaining non root user 
+# this will work like cd command means final image will have pwd as /opt/pycodes
+ENTRYPOINT [ "python3" ]
+CMD ["/opt/pycodes/hello.py"]
+# cmd and entrypoint are same but we can't replace entrypoint while creating container
+```
+
