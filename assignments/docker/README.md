@@ -26,3 +26,42 @@
   
 </ol>
 
+
+### TAsK 4 -- use below given dockerfile to do task 
+
+## Dockerfile 
+
+```
+FROM alpine 
+# pulling python image from docker hub 
+LABEL name="ashutoshh"
+LABEL email="ashutoshh@linux.com"
+# image creator info -- optional 
+RUN apk add python3 
+RUN mkdir  /opt/pycodes/ 
+# to run any command whatever required we use RUN 
+COPY *.py  /opt/pycodes/ 
+# from docker server copy code to new image while building 
+#CMD ["python3","/opt/pycodes/hello.py"]
+# to set default process while creating container 
+# it can be replaced by docker engineer  while creating container 
+WORKDIR /opt/pycodes/ 
+USER 1001 
+# gaining non root user 
+# this will work like cd command means final image will have pwd as /opt/pycodes
+ENTRYPOINT [ "python3" ]
+CMD ["/opt/pycodes/hello.py"]
+# cmd and entrypoint are same but we can't replace entrypoint while creating container
+```
+
+### DO some adjustment 
+
+<ol> 
+  <li> modify above dockerfile to install python2 also    </li>
+  <li> Build the final image with USER 1001 only    </li>
+  <li> Now create 2 containers    </li>
+  <li> container1 should run hello.py using python3 in above created image   </li>
+  <li>  container2 should run ashu.py  using python2 in above created image   </li>
+  
+</ol>
+
