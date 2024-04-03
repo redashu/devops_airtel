@@ -65,3 +65,8 @@ CMD ["/opt/pycodes/hello.py"]
   
 </ol>
 
+### creating docker image for ssh server 
+
+<img src="ssh1.png">
+
+
