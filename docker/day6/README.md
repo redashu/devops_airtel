@@ -11,3 +11,13 @@ Dockerfile          hello.java          hello.py            javacode.dockerfile
  => => transferring dockerfile: 201B                                                                                  0.0s
  => [internal] load metadata for docker.io/library/ope
 ```
+
+### testing code by creating temp container 
+
+```
+  day6 git:(master) docker run -it --rm 04e5fa794aea
+Hello World welcome to docker
+Hello World welcome to docker
+Hello World welcome to docker
+^C%                        
+```

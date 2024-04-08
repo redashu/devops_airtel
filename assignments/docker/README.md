@@ -70,3 +70,14 @@ CMD ["/opt/pycodes/hello.py"]
 <img src="ssh1.png">
 
 
+## Dockerfile tasks for nginx and httpd
+
+### httpd image 
+```
+1. Creating httpd image for hosting hello.html page 
+2. use bases images first ubuntu and second oraclelinux:8.4 
+3. try to minimize size of images as much as you can do 
+
+```
+
+### nginx image -- Repeate the for nginx as per httpd things 
