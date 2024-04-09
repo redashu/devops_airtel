@@ -81,3 +81,15 @@ CMD ["/opt/pycodes/hello.py"]
 ```
 
 ### nginx image -- Repeate the for nginx as per httpd things 
+
+## Creat docker image as per given things
+
+<ol>
+  <li> Creating httpd image using oraclelinux:8.4 as base</li>
+  <li> make sure this image is having 2 virtualhost configured </li>
+  <li> servername of vhost will be same (localhost) but port number will be 80 and 81 </li>
+  <li> documentroot will be /opt/mywebapp1 and /opt/mywebapp2 </li>
+</ol>
+
+### Docker Host networking task -- define and understand use of it
+
