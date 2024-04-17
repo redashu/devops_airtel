@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  ashuwebapp:
+    image: httpd:ashuv1 
+    build: . # location of Dockerfile
+    container_name: ashucc99 
+    ports:
+      - 1111:80
+      - 3355:1234 
