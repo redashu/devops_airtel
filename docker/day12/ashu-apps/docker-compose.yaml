@@ -1,0 +1,20 @@
+version: "3.8"
+networks: # tocreate network 
+  ashubrnew1: # name of network bridge 
+services:
+  ashupyapp:
+    image: ashupyimg:v1  # image to be build 
+    build: .  # location of Dockerfile 
+    container_name: ashupyc1 
+    network_mode: none
+    tty: true # like we given docker run -it 
+  ashuwebapp1: 
+    image: ashuhttpd:v1 
+    build:
+      context: .  #location 
+      dockerfile: httpd.dockerfile # name 
+    container_name: ashuhttpdc1 
+    networks: # calling bridge 
+      - ashubrnew1 # name of bridge 
+    ports:
+      - 4466:80 
