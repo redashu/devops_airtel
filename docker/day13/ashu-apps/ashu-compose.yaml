@@ -1,18 +1,26 @@
 version: "3.8"
+volumes: # create volume 
+  ashudbvol8:  # name of volume 
 services:
-  ashupyapp:
-    image: ashupyimg:v1  # image to be build 
-    build: .  # location of Dockerfile 
-    container_name: ashupyc1 
-    network_mode: none
-    tty: true # like we given docker run -it 
-  ashuwebapp1: 
-    image: ashuhttpd:v1 
-    build:
-      context: .  #location 
-      dockerfile: httpd.dockerfile # name 
-    container_name: ashuhttpdc1 
+  ashudb: 
+    image: mysql 
+    container_name: ashudbc1 
+    environment:
+      MYSQL_ROOT_PASSWORD: Root@0987
+    volumes: # mounting volume 
+    - ashudbvol8:/var/lib/mysql/
+  webaapp:
+    image: adminer 
+    container_name: ashuwebc1 
     ports:
-      - 4466:80 
+    - 1133:8080 
     depends_on:
-    - ashupyapp
+    - ashudb 
+  ashuwebcode:
+    image: nginx 
+    container_name: ashuwebc12 
+    ports:
+    - 4455:80 
+    volumes:
+    - ./html-sample-app:/usr/share/nginx/html/:ro 
+  

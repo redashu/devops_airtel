@@ -93,3 +93,6 @@ CMD ["/opt/pycodes/hello.py"]
 
 ### Docker Host networking task -- define and understand use of it
 
+## compsoe task 1 
+
+<img src="compose1.png">
