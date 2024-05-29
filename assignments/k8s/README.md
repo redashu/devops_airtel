@@ -27,3 +27,11 @@
  -  5. now transfer logs.txt on your pods under /opt/logs.txt 
  -  6. check that pods is scheduled in which minion node and store that name in logs.txt inside pod 
  -  7. make sure previous data in logs.txt must be present 
+
+ ### pod task 3 
+
+ - create a new docker image using some sample webapp 
+ - use nginx as based and build image 
+ - push this docker image to docker hub  and ECR as private registry 
+ - now deploy these image as pod in k8s
+
