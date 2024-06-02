@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ashupod1
+  name: ashupod1
+spec:
+  imagePullSecrets: # to use secret created by us 
+  - name: ashu-reg-secret # existing secret name 
+  containers:
+  - image: ashutoshh.azurecr.io/ashuweb:v1
+    name: ashupod1
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
