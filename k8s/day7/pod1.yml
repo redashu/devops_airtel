@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ashupod1
+  name: ashupod1
+spec:
+  imagePullSecrets: # calling secrets 
+  - name: basit-reg-secret
+  containers:
+  - image: basit189/sample-webapp:latest
+    name: ashupod1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
