@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels: # label of mypods 
+    run: ashupod3 # here my lable is run: ashupod3 
+  name: ashupod3 # name of pod 
+spec:
+  containers:
+  - image: nginx
+    name: ashupod3
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
