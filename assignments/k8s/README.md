@@ -35,3 +35,13 @@
  - push this docker image to docker hub  and ECR as private registry 
  - now deploy these image as pod in k8s
 
+### Deployment task 
+
+- create Dockerfile with some sample webapp code 
+- build docker image and push it  aws ECR make sure image is private
+- now deployment ecr image to local rancher k8s using deployment controller with 3 replica of pod
+- create nodeport service and try to access that application
+
+### lets upgrade app
+- changes something in your webapp and rebuild , push image to ECR
+- now do something so that application can be upgraded to new version
