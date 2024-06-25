@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashuapp
+  name: lb1 # name of internal LB 
+spec: 
+  ports:
+  - port: 80 # lb port 
+    protocol: TCP
+    targetPort: 80 # app port 
+  selector: # using select service try to find pods 
+    app: ashuapp
+  type: NodePort # type of service which will explose 300000-32767 range ports
+status:
+  loadBalancer: {}
