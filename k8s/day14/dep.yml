@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default  # name of namespace which must be existing 
+  creationTimestamp: null
+  labels:
+    app: d11
+  name: d11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: d11
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: d11
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
