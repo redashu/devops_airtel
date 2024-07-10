@@ -45,3 +45,13 @@
 ### lets upgrade app
 - changes something in your webapp and rebuild , push image to ECR
 - now do something so that application can be upgraded to new version
+
+### Create below given things 
+
+- build any webapp based docker image and push it to ECR 
+- create a yaml file called common.yaml deploy it using kubectl 
+- when you deploy above yaml file it must create below given things 
+    *** - It must create a namespace call yourname-ns
+    *** - IT must create deployment using above image which you have pushed 
+    *** - It must create Nodeport service with 31009 as nodePort 
+
