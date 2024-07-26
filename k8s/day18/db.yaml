@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: d1
+  name: d1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: d1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: d1
+    spec:
+      containers:
+      - image: mysql:8.0
+        name: mysql
+        ports:
+        - containerPort: 3306
+        resources: {}
+        env: 
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:  # reading data from k8s secret 
+            secretKeyRef:
+              name: ashu-root-cred # name of secret 
+              key: myrootpass # key of secret 
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef: # reading value from CM 
+              name: ashu-db-name # name of CM 
+              key: dbname # key of CM 
+        envFrom: 
+        - secretRef:
+           name: ashu-user-cred
+        
+
+status: {}

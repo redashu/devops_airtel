@@ -55,3 +55,9 @@
     *** - IT must create deployment using above image which you have pushed 
     *** - It must create Nodeport service with 31009 as nodePort 
 
+### k8s task for configMap
+
+- build a docker image of nginx webapp take some sample webapp 
+- test and push in docker hub 
+- now deploy above pushed docker image to k8s using deployment 
+- while deployment change port of nginx as 81 using configMap 

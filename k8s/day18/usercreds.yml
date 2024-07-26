@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  mysqlusers.txt: TVlTUUxfVVNFUj1hc2h1Ck1ZU1FMX1BBU1NXT1JEPUFzaHVAMDk4cXdlcg==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: ashu-user-cred

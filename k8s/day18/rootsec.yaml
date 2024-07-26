@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  myrootpass: UmVkaGF0QDEyMzQ1Njc=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: ashu-root-cred
