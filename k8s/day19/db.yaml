@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: d1
+  name: d1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: d1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: d1
+    spec:
+      containers:
+      - image: mysql:8.0
+        name: mysql
+        ports:
+        - containerPort: 3306
+        resources: {}
+        env: 
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:  # reading data from k8s secret 
+            secretKeyRef:
+              name: ashu-root-cred # name of secret 
+              key: myrootpass # key of secret 
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef: # reading value from CM 
+              name: ashu-db-name # name of CM 
+              key: dbname # key of CM 
+        # envFrom: 
+        # - secretRef:
+        #    name: ashu-user-cred
+        
+
+status: {}
+
+# defining secrets
+---
+apiVersion: v1
+data:
+  myrootpass: UmVkaGF0QDEyMzQ1Njc=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: ashu-root-cred
+## creating configmap 
+---
+apiVersion: v1
+data:
+  dbname: airteldb
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: ashu-db-name
+
+# creating service 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashudbsvc
+  name: ashudbsvc
+spec:
+  ports:
+  - name: 3306-3306
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector: # matching label of pods 
+    app: d1
+  type: ClusterIP
+status:
+  loadBalancer: {}
