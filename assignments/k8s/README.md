@@ -99,3 +99,11 @@ volumes:
 
 
 ```
+
+### Deploy a sample webapp as per given things 
+
+- **  create any deployment using any sample webapp 
+- ** make sure this must run over https using SSL or TLS 
+- ** try to use httpd or nginx based image 
+- ** create clusterIP type service 
+- ** write routing rule using ingress controller + SSL option
