@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-pv1
+spec:
+  capacity:
+    storage: 3Gi  # Specify the size of the PV
+  accessModes:
+    - ReadWriteOnce  # Set the access mode (e.g., ReadWriteOnce, ReadOnlyMany, ReadWriteMany)
+  hostPath:
+    path: /mnt/data/ashu1
+    type: DirectoryOrCreate  # Specify the path on the host where the data will be stored
+  persistentVolumeReclaimPolicy: Retain  # Choose the reclaim policy (e.g., Retain, Recycle, Delete)

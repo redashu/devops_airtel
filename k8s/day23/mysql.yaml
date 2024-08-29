@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: mysqldb
+  name: mysqldb
+spec:
+  volumes:  # for creating volume with in the pod 
+  - name: ashuvol1 
+    persistentVolumeClaim:  # take storage from worker node whereever pod is running 
+      claimName: example-pvc1 # if given path is not there then create it      
+  containers: # for creating container within 
+  - env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: redhat # best thing is to use password in secret only 
+    image: mysql
+    name: mysqldb
+    volumeMounts: # mounting above volume 
+    - name: ashuvol1
+      mountPath: /var/lib/mysql/ # default storage of mysql server 
+    ports:
+    - containerPort: 3306
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
