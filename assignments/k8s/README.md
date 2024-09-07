@@ -107,3 +107,8 @@ volumes:
 - ** try to use httpd or nginx based image 
 - ** create clusterIP type service 
 - ** write routing rule using ingress controller + SSL option
+
+### creating mysql deployment using hashicorp vault 
+
+<img src="vault.png">
+
