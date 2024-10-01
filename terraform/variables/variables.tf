@@ -18,7 +18,8 @@ variable "vm_size" {
 
 variable "vm_count" {
     type = number
-    default = 2
+    default = 1
     description = "number as input"
   
 }
+
