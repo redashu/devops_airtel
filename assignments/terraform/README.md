@@ -17,3 +17,16 @@
 4. make public ip is getting stored in file called public_ip.txt in current location of terraform code 
 
 ```
+
+### Terraform task 3 
+
+```
+1. create ec2 instance and one security group also a public and private key 
+2. in security group allow 22 and 80 port 
+3. write a shell script to setup httpd server 
+4. use above shell script to install in ec2 using remote provisioner 
+5. store public and private ip in a single file 
+6. make sure you are using your own private key while creating ec2 the one you created above
+
+```
+
