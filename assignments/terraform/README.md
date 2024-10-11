@@ -30,3 +30,14 @@
 
 ```
 
+### terraform task 4 
+
+```
+1. create a shell script of linux which can create 10 users with any name and also set password
+   for thoese use like <usernmae>Delvex@123 and store this script in your local machine named as user.sh
+2. write terraform code to create ec2 vm and use above script to create users in this vm 
+3. also make sure when vm is getting provisioner your system must note creation and deletion time  in a same file like "vm is getting created at  <time>" and same for deletion
+4. make sure you are creating your private and public in terraform code only not using any existing key
+
+```
+
